@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.john.finalproject.MainActivity">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGray"
+        app:srcCompat="@drawable/mediacontrol_play"
+        android:id="@+id/resumeBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/audioSeekBar"
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/resumeBtn"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="0.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDurationUpdate"
+        android:layout_above="@+id/audioSeekBar"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:text="99:99"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDurationMax"
+        android:layout_marginEnd="12dp"
+        android:layout_above="@+id/audioSeekBar"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGray"
+        app:srcCompat="@drawable/mediacontrol_stop"
+        android:id="@+id/stopBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/resumeBtn"
+        android:layout_marginEnd="25dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGray"
+        app:srcCompat="@drawable/mediacontrol_pause"
+        android:id="@+id/pauseBtn"
+        android:layout_marginStart="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/resumeBtn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        android:id="@+id/tvLyrics"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="placeholder" />
+
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60dp"
+        android:padding="7dp"
+        tools:text="--"
+        android:layout_above="@+id/tvDurationUpdate"
+        android:layout_toEndOf="@+id/stopBtn"
+        android:layout_marginBottom="35dp" />
+
+</RelativeLayout>

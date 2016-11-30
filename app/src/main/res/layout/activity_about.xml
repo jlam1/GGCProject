@@ -31,7 +31,7 @@
         android:id="@+id/textView2" />
 
     <TextView
-        android:text="John Lam ITEC 4550"
+        android:text="John Lam ITEC 4550 "
         android:textSize="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,5 +39,16 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView3"
+        android:text="and King Oruga"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textSize="25dp" />
 
 </RelativeLayout>

@@ -24,10 +24,9 @@ import be.tarsos.dsp.pitch.PitchProcessor;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Note note;
-    private TextView text, tvCurrentDuration, tvTotalDuration, tvLyrics;
+    private TextView tvCurrentDuration, tvTotalDuration, tvLyrics;
     private MediaPlayer mp;
-    private Handler handler, mHandler;
+    private Handler mHandler;
     private ImageButton playBtn, stopBtn, pauseBtn;
     private SeekBar audioBar;
 
@@ -46,47 +45,9 @@ public class MainActivity extends AppCompatActivity {
         audioBar 			= (SeekBar) 	findViewById(R.id.audioSeekBar);
 
         mp          = MediaPlayer.create(this, R.raw.ggc_alma_mater);
-        handler     = new Handler();
         mHandler    = new Handler();
 
         tvTotalDuration.setText(getTimeString(mp.getDuration()));
-
-        AudioDispatcher dispatcher = AudioDispatcherFactory.fromDefaultMicrophone(22050,1024,0);
-
-        /**
-         * This will handle inputs from microphone and display a Note depending on pitch(in hertz).
-         * Note will display the letter, subscript, and superscript.
-         */
-        PitchDetectionHandler pdh = new PitchDetectionHandler() {
-
-            @Override
-            public void handlePitch(PitchDetectionResult result,AudioEvent e) {
-                final float pitchInHz = result.getPitch();
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        text = (TextView) findViewById(R.id.tvNote);
-                        note = new NoteRecognizer().convertToNote(pitchInHz);
-
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                if(note != null) {
-                                    text.setText(Html.fromHtml(note.getNoteLetter() + "<sup><small>" + note.getSubscript() + "</small></sup><sub><small>" + note.getSuperscript() + "</small></sub>"));
-                                }
-                                else {
-                                    text.setText("--");
-                                }
-                            }
-                        });
-                    }
-                });
-            }
-        };
-
-        AudioProcessor p = new PitchProcessor(PitchProcessor.PitchEstimationAlgorithm.FFT_YIN, 22050, 1024, pdh);
-        dispatcher.addAudioProcessor(p);
-        new Thread(dispatcher,"Audio Dispatcher").start();
 
         /**
          * This class is responsible for updating UI based on the current position(in milliseconds) of the media player.
@@ -269,5 +230,13 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+    }
+    /**
+     * method:goToNoteRecognizer()
+     * @param view
+     * @method starts a new note recognizer activity
+     */
+    public void goToNoteRecognizer(View view){
+        startActivity(new Intent(this, NoteRecognizerActivity.class));
     }
 }

@@ -9,6 +9,7 @@
 <img src="/screenshots/00.PNG" width = "250"/>
 
 <h3>Video</h3>
+https://youtu.be/69MqqJMA_-0
 
 <h1>Notes and Instructions</h1>
 <ul>
@@ -27,4 +28,5 @@
 <li><a href='https://github.com/aporter/coursera-android/blob/master/Examples/SensorFilteredAccelerometer/src/course/examples/sensors/showfilteredvalues/SensorFilteredValuesActivity.java'>Porter's low and high pass example code</a></li>
 <li><a href='https://android-arsenal.com/details/1/1986'>TarsosDSP</a></li>
 <li><a href='https://0110.be/posts/TarsosDSP_on_Android_-_Audio_Processing_in_Java_on_Android'>TarsosDSP on Android</a></li>
+<li>Images of anything GGC related are from the official GGC webpage and used https://icons8.com/web-app/category/Media-Controls for image buttons.</li>
 </ol>

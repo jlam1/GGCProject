@@ -67,25 +67,31 @@
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/resumeBtn" />
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="95dp"
-        android:id="@+id/tvLyrics"
-        android:textSize="30dp"
+        app:srcCompat="@drawable/ggc_vert_color"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="placeholder" />
+        android:layout_marginTop="22dp"
+        android:id="@+id/imageView3" />
 
     <TextView
-        android:id="@+id/tvNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="60dp"
-        android:padding="7dp"
-        tools:text="--"
+        android:id="@+id/tvLyrics"
+        android:textSize="30dp"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp" />
+
+    <Button
+        android:text="Note Recognizer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nrBtn"
         android:layout_above="@+id/tvDurationUpdate"
-        android:layout_toEndOf="@+id/stopBtn"
-        android:layout_marginBottom="35dp" />
+        android:layout_centerHorizontal="true"
+        android:onClick="goToNoteRecognizer"/>
 
 </RelativeLayout>

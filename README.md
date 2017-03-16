@@ -4,9 +4,9 @@
 <h1>Demonstration</h1>
 
 <h3>Screenshots</h3>
-<img src="/screenshots/02.PNG" width = "250"/>
-<img src="/screenshots/03.PNG" width = "250"/>
-<img src="/screenshots/00.PNG" width = "250"/>
+<img src="/screenshots/02.PNG" width = "225"/>
+<img src="/screenshots/03.PNG" width = "225"/>
+<img src="/screenshots/00.PNG" width = "225"/>
 
 <h3>Video</h3>
 https://youtu.be/69MqqJMA_-0
